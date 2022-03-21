@@ -22,7 +22,7 @@ spec:
   selector:
     matchLabels:
       app: tool-warehouse
-  replicas: 5
+  replicas: 3
   template:
     metadata:
       labels:
