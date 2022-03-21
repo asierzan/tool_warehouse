@@ -6,12 +6,13 @@ metadata:
     name: tool-warehouse
 spec:
   ports:
-    - port: 9000
+    - nodePort: 30347
+      port: 9000
       targetPort: 9000
       protocol: TCP
   selector:
     app: tool-warehouse
-  type: ClusterIP
+  type: NodePort
 
 ---
 apiVersion: apps/v1
