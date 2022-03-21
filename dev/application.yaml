@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: tool-warehouse
+  namespace: argocd
+spec: 
+  project: default
+
+  source:
+    repoURL: https://github.com/asierzan/tool_warehouse.git
+    targetRevision: HEAD
+    path: warehouse
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: warehouse
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true 
+      prune: true 
