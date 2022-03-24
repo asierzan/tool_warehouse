@@ -30,7 +30,10 @@ public class ToolServiceImpl implements ToolService {
 
     public void deleteTool(Long id) {
         toolRepository.deleteById(id);
-
     }
 
+    public Long getToolQuantity(Long id) {
+        Tool tool = toolRepository.findById(id).orElseThrow(()->new NullPointerException());
+        return tool.getQuantity();
+    }
 }

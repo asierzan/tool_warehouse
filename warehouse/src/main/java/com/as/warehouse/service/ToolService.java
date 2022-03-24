@@ -15,4 +15,6 @@ public interface ToolService {
 
     void deleteTool(Long id);
 
+    Long getToolQuantity(Long id);
+
 }

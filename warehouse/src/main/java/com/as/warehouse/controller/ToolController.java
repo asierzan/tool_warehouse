@@ -18,6 +18,11 @@ public class ToolController {
         this.toolService = toolService;
     }
 
+    @GetMapping("/hello")
+    public String sayHello(){
+        return "Welcome in tool warehouse!";
+    }
+
     @GetMapping()
     public ResponseEntity<List<Tool>> getTools(){
         return toolService.getListOfTools();
@@ -38,4 +43,8 @@ public class ToolController {
         toolService.deleteTool(id);
     }
 
+    @GetMapping("/{id}/quantity")
+    public Long getToolQuantity(@PathVariable Long id){
+        return toolService.getToolQuantity(id);
+    }
 }

@@ -33,23 +33,23 @@ spec:
           image: asierzan/tool-warehouse:0.0.4
           ports:
             - containerPort: 9000
-          env:   # Setting Enviornmental Variables
-            - name: DB_HOST   # Setting Database host address from configMap
+          env:
+            - name: DB_HOST
               valueFrom:
                 configMapKeyRef:
-                  name: postgres-conf  # name of configMap
+                  name: postgres-conf
                   key: host
-            - name: DB_NAME  # Setting Database name from configMap
+            - name: DB_NAME
               valueFrom:
                 configMapKeyRef:
                   name: postgres-conf
                   key: name
-            - name: POSTGRES_USER  # Setting Database username from Secret
+            - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
-                  name: postgres-credentials # Secret Name
+                  name: postgres-credentials
                   key: postgres_user
-            - name: POSTGRES_PASSWORD # Setting Database password from Secret
+            - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: postgres-credentials
