@@ -12,8 +12,7 @@ spec:
       protocol: TCP
   selector:
     app: tool-warehouse
-  type: ExternalName
-  externalName: tool-warehouse.warehouse.svc.cluster.local
+  type: NodePort
 
 ---
 apiVersion: apps/v1
